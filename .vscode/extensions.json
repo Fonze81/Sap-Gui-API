@@ -1,0 +1,30 @@
+{
+    "recommendations": [
+        "dracula-theme.theme-dracula",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "littlefoxteam.vscode-python-test-adapter",
+        "njpwerner.autodocstring",
+        "aaron-bond.better-comments",
+        "oderwat.indent-rainbow",
+        "shardulm94.trailing-spaces",
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "donjayamanne.githistory",
+        "mhutchie.git-graph",
+        "tabnine.tabnine-vscode",
+        "frhtylcn.pythonsnippets",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers",
+        "ms-vscode.test-adapter-converter",
+        "pkief.material-icon-theme",
+        "bierner.markdown-mermaid",
+        "bierner.markdown-checkbox",
+        "bierner.github-markdown-preview",
+        "bierner.markdown-preview-github-styles",
+        "donjayamanne.python-environment-manager",
+        "felipecaputo.git-project-manager",
+        "eamodio.gitlens"
+    ]
+}
