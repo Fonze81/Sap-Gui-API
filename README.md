@@ -3,7 +3,7 @@
 
 <!-- Insert badges here. See https://shields.io/ -->
 ![GitHub](https://img.shields.io/github/v/tag/Fonze81/Sap-Gui-API?style=flat&logo=github)
-![GitHub](https://img.shields.io/github/release-date/Fonze81/Sap-Gui-API?style=flat&logo=github)
+![GitHub](https://img.shields.io/github/v/release/Fonze81/Sap-Gui-API?display_name=tag&include_prereleases&style=flat&logo=github)
 ![GitHub](https://img.shields.io/github/last-commit/Fonze81/Sap-Gui-API?style=flat&logo=github)
 ![GitHub](https://img.shields.io/github/commit-activity/m/Fonze81/Sap-Gui-API?style=flat&logo=github)
 ![GitHub](https://img.shields.io/github/repo-size/Fonze81/Sap-Gui-API?style=flat&logo=github)
@@ -86,10 +86,12 @@ Clone the GitHub remote repository by running the command
 
 ```bash
 git clone https://github.com/Fonze81/Sap-Gui-API # Clone remote repository
-python -m venv backend # Create virtual environment
+python -m venv venv # Create virtual environment
 cd venv\Scripts # Go to folder Scripts
 .\Activate.ps1 # Activate virtual environment
 python -m pip install --upgrade pip # Update pip
+cd..
+cd..
 pip install -r requirements.txt # Install requirements packages
 mkdocs serve # Start server. Ctrl + C stop server
 Browser connected: http://127.0.0.1:8000/ # Open documentation website
