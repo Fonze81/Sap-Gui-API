@@ -85,11 +85,12 @@ Before starting, you will need to have the following tools installed on your mac
 Clone the GitHub remote repository by running the command
 
 ```bash
-git clone https://github.com/Fonze81/Sap-Gui-API
-python -m venv backend
-cd venv\Scripts
-.\Activate.ps1
-python -m pip install --upgrade pip
+git clone https://github.com/Fonze81/Sap-Gui-API # Clone remote repository
+python -m venv backend # Create virtual environment
+cd venv\Scripts # Go to folder Scripts
+.\Activate.ps1 # Activate virtual environment
+python -m pip install --upgrade pip # Update pip
+pip install -r requirements.txt # Install requirements packages
 ```
 
 <!-- Link to top -->
