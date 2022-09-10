@@ -86,6 +86,10 @@ Clone the GitHub remote repository by running the command
 
 ```bash
 git clone https://github.com/Fonze81/Sap-Gui-API
+python -m venv backend
+cd venv\Scripts
+.\Activate.ps1
+python -m pip install --upgrade pip
 ```
 
 <!-- Link to top -->
