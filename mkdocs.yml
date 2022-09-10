@@ -25,7 +25,7 @@ theme:
   font:
     text: Roboto
     language: en
-    # logo:
+  logo: /img/python_20px.svg
   extra:
     homepage: https://example.com
     theme:

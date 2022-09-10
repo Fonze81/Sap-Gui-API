@@ -11,7 +11,7 @@
 
 
 # Sap Gui API for Python ![SAP](/img/sap_20px.svg) ![Python](/img/python_20px.svg)
- 
+
 <details>
     <summary>Table of Contents</summary>
     <ol>
@@ -91,6 +91,8 @@ cd venv\Scripts # Go to folder Scripts
 .\Activate.ps1 # Activate virtual environment
 python -m pip install --upgrade pip # Update pip
 pip install -r requirements.txt # Install requirements packages
+mkdocs serve # Start server. Ctrl + C stop server
+Browser connected: http://127.0.0.1:8000/ # Open documentation website
 ```
 
 <!-- Link to top -->
