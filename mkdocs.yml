@@ -1,4 +1,8 @@
 site_name: Sap Gui API for Python
+nav:
+    - Home: 'index.md'
+    - 'Sap Gui API':
+        - 'GuiComponent': './sap-gui-api/guicomponent.md'
 theme:
   name: material
   palette:
