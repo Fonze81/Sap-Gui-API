@@ -23,19 +23,43 @@ https://help.sap.com/doc/9215986e54174174854b0af6bb14305a/760.01/en-US/sap_gui_s
 # TODO Create class based on the documentation of the 'GuiComboBoxEntry'
 # TODO Create class based on the documentation of the 'GuiComponent'
 
-class GuiComponent():
+class GuiComponent(object):
+    """GuiComponent is the base class for most classes in the Scripting API.
 
-    #_element = self.element
+    It was designed to allow generic programming, meaning you can work with objects without knowing
+    their exact type.
+    """
+
+    # See PEP 591 – Adding a final qualifier to typing
+    VALID_TYPES: list = ['GuiComponent']
+
+    @property
+    def element(self: object) -> object:
+        """
+        Class attribute to which the SAP element should be referenced.
+
+        Returns:
+            object: SAP element
+        """
+        return self._element
+
+    @element.setter
+    def element(self: object, value: object):
+        self._element = value
+        self.validate_element_type()
+
     #_container_type = self.container_type
     #_id = self.id
     #_name = self.name
     #_parent = self.parent
     #_type = self.type
     #_type_as_number = self.type_as_number
-    #validate_element_type(self)
-
-    def __init__(self):
+    def _validate_element_type(self):
         pass
+
+    def __init__(self: object, element: object = None):
+        # Constructor.
+        self._element = element
 
 
 # TODO Create class based on the documentation of the 'GuiComponentCollection'
