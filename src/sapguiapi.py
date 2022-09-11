@@ -71,7 +71,21 @@ class GuiComponent(object):
         self._validate_element_type()
         return self._element.Id
 
-    #_name = self.name
+    @property
+    def name(self: object) -> str:
+        """
+        *Read-only*.
+
+        The name property is especially useful when working with
+        simple scripts that only access dynpro fields. In that case a
+        field can be found using its name and type information,
+        which is easier to read than a possibly very long id. However,
+        there is no guarantee that there are no two objects with the
+        same name and type in a given dynpro.
+        """
+        self.validate_element_type()
+        return self._element.Name
+
     #_parent = self.parent
     #_type = self.type
     #_type_as_number = self.type_as_number
