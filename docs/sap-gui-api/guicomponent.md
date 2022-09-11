@@ -8,11 +8,14 @@ their exact type.
 
 ## Atributes
 
-**`#!python element: object`** <small>:simple-python:</small>
+`#!python element: object` <small>:simple-python:</small>
 
 Class attribute to which the SAP element should be referenced.
 
-container_type  
+`#!python container_type: bool` <small>read-only :simple-sap:</small>
+
+This property is TRUE, if the object is a container and therefore has the Children property.
+
 id  
 name  
 parent  

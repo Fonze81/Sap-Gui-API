@@ -46,9 +46,19 @@ class GuiComponent(object):
     @element.setter
     def element(self: object, value: object):
         self._element = value
-        self.validate_element_type()
+        self._validate_element_type()
 
-    #_container_type = self.container_type
+    @property
+    def container_type(self: object) -> bool:
+        """
+        *Read-only*.
+
+        This property is TRUE, if the object is a container and therefore
+        has the Children property.
+        """
+        self._validate_element_type()
+        return self._element.ContainerType
+
     #_id = self.id
     #_name = self.name
     #_parent = self.parent
