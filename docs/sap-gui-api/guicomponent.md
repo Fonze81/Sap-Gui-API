@@ -16,7 +16,10 @@ Class attribute to which the SAP element should be referenced.
 
 This property is TRUE, if the object is a container and therefore has the Children property.
 
-id  
+`#!python id: str` <small>read-only :simple-sap:</small>
+
+An object id is a unique textual identifier for the object. It is built in a URL like formatting, starting at the GuiApplication object and drilling down to the respective object.
+
 name  
 parent  
 type  

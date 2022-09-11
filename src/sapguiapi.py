@@ -59,7 +59,18 @@ class GuiComponent(object):
         self._validate_element_type()
         return self._element.ContainerType
 
-    #_id = self.id
+    @property
+    def id(self: object) -> str:
+        """
+        *Read-only*.
+
+        An object id is a unique textual identifier for the object. It is
+        built in a URL like formatting, starting at the GuiApplication
+        object and drilling down to the respective object.
+        """
+        self._validate_element_type()
+        return self._element.Id
+
     #_name = self.name
     #_parent = self.parent
     #_type = self.type
