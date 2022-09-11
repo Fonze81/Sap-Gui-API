@@ -110,7 +110,20 @@ class GuiComponent(object):
         self._validate_element_type()
         return self._element.Type
 
-    #_type_as_number = self.type_as_number
+    @property
+    def type_as_number(self: object) -> int:
+        """
+        *Read-only*.
+
+        While the Type property is a string value, the
+        TypeAsNumber property is a long value that can alternatively
+        be used to identify an object's type . It was added for
+        better performance in methods such as FindByIdEx.
+        Possible values for this property are taken from the GuiComponentType enumeration.
+        """
+        self._validate_element_type()
+        return self._element.TypeAsNumber
+
     def _validate_element_type(self):
         pass
 

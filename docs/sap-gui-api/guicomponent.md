@@ -34,7 +34,11 @@ An object is always in the children collection of its parent.
 The type information of GuiComponent can be used to determine which properties and methods an object supports.
 The value of the type string is the name of the type taken from this documentation.
 
-type_as_number
+`#!python type_as_number: int` <small>read-only :simple-sap:</small>
+
+While the Type property is a string value, the TypeAsNumber property is a long value that can alternatively
+be used to identify an object's type . It was added for better performance in methods such as FindByIdEx.
+Possible values for this property are taken from the GuiComponentType enumeration.
 
 ## Methods
 
