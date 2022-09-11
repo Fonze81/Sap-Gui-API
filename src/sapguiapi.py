@@ -97,7 +97,19 @@ class GuiComponent(object):
         self._validate_element_type()
         return self._element.Parent
 
-    #_type = self.type
+    @property
+    def type(self: object) -> str:
+        """
+        *Read-only*.
+
+        The type information of GuiComponent can be used to determine which properties and
+        methods an object supports.
+        The value of the type string is the name of the type taken
+        from this documentation.
+        """
+        self._validate_element_type()
+        return self._element.Type
+
     #_type_as_number = self.type_as_number
     def _validate_element_type(self):
         pass
