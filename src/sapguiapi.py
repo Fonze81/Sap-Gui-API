@@ -7,6 +7,8 @@ Document Version: 7.60 PL1 – 2019-03-28
 https://help.sap.com/doc/9215986e54174174854b0af6bb14305a/760.01/en-US/sap_gui_scripting_api_761.pdf
 """
 
+from typing import final
+
 # TODO Create class based on the documentation of the 'GuiAbapEditor'
 # TODO Create class based on the documentation of the 'GuiApoGrid'
 # TODO Create class based on the documentation of the 'GuiApplication'
