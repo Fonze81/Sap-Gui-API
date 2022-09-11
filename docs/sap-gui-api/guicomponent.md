@@ -24,7 +24,11 @@ An object id is a unique textual identifier for the object. It is built in a URL
 
 The name property is especially useful when working with simple scripts that only access dynpro fields. In that case a field can be found using its name and type information, which is easier to read than a possibly very long id. However, there is no guarantee that there are no two objects with the same name and type in a given dynpro.
 
-parent  
+`#!python parent: object` <small>read-only :simple-sap:</small>
+
+The parent of an object is one level higher in the runtime hierarchy.
+An object is always in the children collection of its parent.
+
 type  
 type_as_number
 

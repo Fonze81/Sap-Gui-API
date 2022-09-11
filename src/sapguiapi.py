@@ -83,10 +83,20 @@ class GuiComponent(object):
         there is no guarantee that there are no two objects with the
         same name and type in a given dynpro.
         """
-        self.validate_element_type()
+        self._validate_element_type()
         return self._element.Name
 
-    #_parent = self.parent
+    @property
+    def parent(self: object) -> object:
+        """
+        *Read-only*.
+
+        The parent of an object is one level higher in the runtime hierarchy.
+        An object is always in the children collection of its parent.
+        """
+        self._validate_element_type()
+        return self._element.Parent
+
     #_type = self.type
     #_type_as_number = self.type_as_number
     def _validate_element_type(self):
