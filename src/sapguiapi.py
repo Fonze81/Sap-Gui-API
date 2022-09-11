@@ -124,8 +124,33 @@ class GuiComponent(object):
         self._validate_element_type()
         return self._element.TypeAsNumber
 
-    def _validate_element_type(self):
-        pass
+    @final  # See PEP 591 – Adding a final qualifier to typing
+    def _validate_element_type(self) -> bool:
+        """Check if the type of the assigned 'element' attribute is compatible.
+
+        Raises:
+            TypeError: The 'element' attribute has not been set.
+            TypeError: The type of 'element' assigned is  not supported.
+
+        Returns:
+            bool: Returns true if supported
+        """
+        is_valid: bool = False
+        # If the attribute has not been defined raise a TypeError
+        if self._element == None:
+            message = f"The 'element' attribute of class '{type(self).__name__}' object has not been set."
+            raise TypeError(message)
+        else:
+            # Checks if the type is supported by the class
+            element_type: str = self._element.type
+            for item in self.VALID_TYPES:
+                if item == element_type:
+                    is_valid = True
+            if is_valid:
+                return True
+            else:
+                message = f"The type of 'element' assigned to object of class '{type(self).__name__}' is  not supported."
+                raise TypeError(message)
 
     def __init__(self: object, element: object = None):
         # Constructor.
