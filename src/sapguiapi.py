@@ -23,7 +23,6 @@ from typing import final
 # TODO Create class based on the documentation of the 'GuiComboBox'
 # TODO Create class based on the documentation of the 'GuiComboBoxControl'
 # TODO Create class based on the documentation of the 'GuiComboBoxEntry'
-# TODO Create class based on the documentation of the 'GuiComponent'
 
 
 class GuiComponent(object):
@@ -284,6 +283,60 @@ class GuiComponent(object):
 # TODO Create class based on the documentation of the 'GuiTree'
 # TODO Create class based on the documentation of the 'GuiUserArea'
 # TODO Create class based on the documentation of the 'GuiUtils'
-# TODO Create class based on the documentation of the 'GuiVComponent'
+
+
+class GuiVComponent:
+
+    def __init__(self,
+                 acc_label_collection,
+                 acc_text,
+                 acc_text_on_request,
+                 acc_tooltip,
+                 changeable,
+                 default_tooltip,
+                 element,
+                 _element,
+                 height,
+                 icon_name,
+                 is_symbol_font,
+                 left,
+                 modified,
+                 parent_frame,
+                 screen_left,
+                 screen_top,
+                 text,
+                 tooltip,
+                 top,
+                 width):
+        self.acc_label_collection = acc_label_collection
+        self.acc_text = acc_text
+        self.acc_text_on_request = acc_text_on_request
+        self.acc_tooltip = acc_tooltip
+        self.changeable = changeable
+        self.default_tooltip = default_tooltip
+        self.element = element
+        self._element = _element
+        self.height = height
+        self.icon_name = icon_name
+        self.is_symbol_font = is_symbol_font
+        self.left = left
+        self.modified = modified
+        self.parent_frame = parent_frame
+        self.screen_left = screen_left
+        self.screen_top = screen_top
+        self.text = text
+        self.tooltip = tooltip
+        self.top = top
+        self.width = width
+
+    def dump_state(self, inner_object):
+        pass
+
+    def set_focus(self):
+        pass
+
+    def visualize(self, on, inner_object=None):
+        pass
+
 # TODO Create class based on the documentation of the 'GuiVContainer'
 # TODO Create class based on the documentation of the 'GuiVHViewSwitch'
