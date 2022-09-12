@@ -3,6 +3,7 @@ nav:
     - Home: 'index.md'
     - 'Sap Gui API':
         - 'GuiComponent': './sap-gui-api/guicomponent.md'
+        - 'GuiVComponent': './sap-gui-api/guivcomponent.md'
 theme:
   name: material
   palette:
