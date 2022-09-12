@@ -137,7 +137,7 @@ class GuiComponent(object):
         Returns:
             bool: Returns true if supported
         """
-        is_valid: bool = False
+        valid: bool = False
         # If the attribute has not been defined raise a TypeError
         if self._element == None:
             message = f"The 'element' attribute of class '{type(self).__name__}' object has not been set."
@@ -147,12 +147,32 @@ class GuiComponent(object):
             element_type: str = self._element.type
             for item in self.VALID_TYPES:
                 if item == element_type:
-                    is_valid = True
-            if is_valid:
+                    valid = True
+            if valid:
                 return True
             else:
                 message = f"The type of 'element' assigned to object of class '{type(self).__name__}' is  not supported."
                 raise TypeError(message)
+
+    @property
+    def is_valid(self: object) -> bool:
+        """Checks if the element is valid. Return True
+
+        After assigning a Sap element to the object,
+        the object is dereferenced in some interface updates."""
+        valid:bool = False
+        try:
+            element_type: str = self._element.type
+            for item in self.VALID_TYPES:
+                if item == element_type:
+                    valid = True
+        except:
+            valid = False
+        finally:
+            if valid:
+                return True
+            else:
+                return False
 
     def __init__(self: object, element: object = None):
         # Constructor.
