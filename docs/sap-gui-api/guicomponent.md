@@ -29,7 +29,9 @@ The name property is especially useful when working with simple scripts that onl
 The parent of an object is one level higher in the runtime hierarchy.
 An object is always in the children collection of its parent.
 
-`#!python type: str` <small>read-only :simple-sap:</small>
+`#!py type`&nbsp; :simple-sap:
+
+**str** &nbsp; <sup>read-only</sup>
 
 The type information of GuiComponent can be used to determine which properties and methods an object supports.
 The value of the type string is the name of the type taken from this documentation.
