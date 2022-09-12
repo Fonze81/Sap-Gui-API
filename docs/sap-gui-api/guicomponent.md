@@ -1,3 +1,6 @@
+<!-- Used for back to top link -->
+<div id="top"></div>
+
 # GuiComponent :simple-sap:
 
 ## Description
@@ -5,15 +8,32 @@
 `GuiComponent` is the base class for most classes in the Scripting API.  
 It was designed to allow generic programming, meaning you can work with objects without knowing their exact type.
 
+``` mermaid
+classDiagram
+    class GuiComponent{
+        + &nbsp; container_type : bool &lbrace;&lbrace;&nbsp; readOnly &nbsp;&rbrace;&rbrace;
+        + &nbsp; element : object
+        # &nbsp; _element : object
+        + &nbsp; id : str &lbrace;&lbrace;&nbsp; readOnly &nbsp;&rbrace;&rbrace;
+        + &nbsp; is_valid : bool &lbrace;&lbrace;&nbsp; readOnly &nbsp;&rbrace;&rbrace;
+        + &nbsp; name : str &lbrace;&lbrace;&nbsp; readOnly &nbsp;&rbrace;&rbrace;
+        + &nbsp; parent : object &lbrace;&lbrace;&nbsp; readOnly &nbsp;&rbrace;&rbrace;
+        + &nbsp; type : str &lbrace;&lbrace;&nbsp; readOnly &nbsp;&rbrace;&rbrace;
+        + &nbsp; type_as_number : int &lbrace;&lbrace;&nbsp; readOnly &nbsp;&rbrace;&rbrace;
+        - &nbsp; __init__()
+        &# &nbsp; _validate_element_type(self : object)
+    }
+```
+
 ## Attributes
 
-### ```element``` <sup>:simple-python:</sup>
+### ```element```
 
 **object**
 
 Attribute to be referenced to the SAP element.
 
-### ```is_valid``` <sup>:simple-python:</sup>
+### ```is_valid```
 
 **bool** &nbsp; <sup>read-only</sup>
 
@@ -58,3 +78,7 @@ The value of the type string is the name of the type taken from this documentati
 While the [type](#type) property is a string value, the `type_as_number` property is a long value that can alternatively be used to identify an object's type.  
 It was added for better performance in methods such as FindByIdEx.  
 Possible values for this property are taken from the GuiComponentType enumeration.
+
+
+<!-- Link to top -->
+<p align="right"><a href="#top">back to top</a></p>
