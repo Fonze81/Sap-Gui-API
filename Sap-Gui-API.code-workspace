@@ -4,5 +4,13 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"cSpell.words": [
+			"Abap",
+			"dynpro",
+			"sapguiapi",
+			"Textedit",
+			"Titlebar"
+		]
+	}
 }

@@ -25,11 +25,53 @@ from typing import final
 # TODO Create class based on the documentation of the 'GuiComboBoxEntry'
 # TODO Create class based on the documentation of the 'GuiComponent'
 
-class GuiComponent(object):
-    """GuiComponent is the base class for most classes in the Scripting API.
 
+class GuiComponent(object):
+    """
+    GuiComponent is the base class for most classes in the Scripting API.
     It was designed to allow generic programming, meaning you can work with objects without knowing
     their exact type.
+
+    Attributes
+    ----------
+        element : object
+            Attribute to be referenced to the SAP element.
+        container_type : bool (read-only)
+            This property is TRUE, if the object is a container and therefore
+            has the Children property.
+        is_valid : bool (read-only)
+            Checks if the element is valid.
+            After assigning a Sap element to the object,
+            the object is dereferenced in some interface updates.
+        container_type : bool (read-only)
+            This property is TRUE, if the object is a container and therefore
+            has the Children property.
+        id : str (read-only)
+            An object id is a unique textual identifier for the object. It is
+            built in a URLlike formatting, starting at the GuiApplication
+            object and drilling down to the respective object.
+        name :  str (read-only)
+            The name property is especially useful when working with
+            simple scripts that only access dynpro fields.
+            In that case a field can be found using its name and type information,
+            which is easier to read than a possibly very long id.
+            However, there is no guarantee that there are no two objects with the
+            same name and type in a given dynpro.
+        parent : object (read-only)
+            The parent of an object is one level higher in the runtime hierarchy.
+            An object is always in the children collection of its parent.
+        type : str (read-only)
+            The type information of GuiComponent can be used to determine which properties and
+            methods an object supports.
+            The value of the type string is the name of the type taken
+            from this documentation.
+        type_as_number : int (read-only)
+            While the Type property is a string value,
+            the TypeAsNumber property is a long value that can alternatively
+            be used to identify an object's type .
+            It was added for better performance in methods such as FindByIdEx.
+            Possible values for this property are taken from the
+            GuiComponentType enumeration.
     """
 
     # See PEP 591 – Adding a final qualifier to typing
@@ -38,16 +80,19 @@ class GuiComponent(object):
     @property
     def element(self: object) -> object:
         """
-        Class attribute to which the SAP element should be referenced.
-
-        Returns:
-            object: SAP element
+        Attribute to be referenced to the SAP element.
         """
+        self._validate_element_type()
         return self._element
 
     @element.setter
-    def element(self: object, value: object):
-        self._element = value
+    def element(self: object, element_sap: object):
+        if element_sap is None:
+            self._element = element_sap
+        elif hasattr(element_sap, 'Type'):
+            self._element = element_sap
+        else:
+            raise AttributeError(name='Type')
         self._validate_element_type()
 
     @property
@@ -67,7 +112,7 @@ class GuiComponent(object):
         *Read-only*.
 
         An object id is a unique textual identifier for the object. It is
-        built in a URL like formatting, starting at the GuiApplication
+        built in a URLlike formatting, starting at the GuiApplication
         object and drilling down to the respective object.
         """
         self._validate_element_type()
@@ -79,10 +124,10 @@ class GuiComponent(object):
         *Read-only*.
 
         The name property is especially useful when working with
-        simple scripts that only access dynpro fields. In that case a
-        field can be found using its name and type information,
-        which is easier to read than a possibly very long id. However,
-        there is no guarantee that there are no two objects with the
+        simple scripts that only access dynpro fields.
+        In that case a field can be found using its name and type information,
+        which is easier to read than a possibly very long id.
+        However, there is no guarantee that there are no two objects with the
         same name and type in a given dynpro.
         """
         self._validate_element_type()
@@ -117,11 +162,12 @@ class GuiComponent(object):
         """
         *Read-only*.
 
-        While the Type property is a string value, the
-        TypeAsNumber property is a long value that can alternatively
-        be used to identify an object's type . It was added for
-        better performance in methods such as FindByIdEx.
-        Possible values for this property are taken from the GuiComponentType enumeration.
+        While the Type property is a string value,
+        the TypeAsNumber property is a long value that can alternatively
+        be used to identify an object's type .
+        It was added for better performance in methods such as FindByIdEx.
+        Possible values for this property are taken from the
+        GuiComponentType enumeration.
         """
         self._validate_element_type()
         return self._element.TypeAsNumber
@@ -144,7 +190,7 @@ class GuiComponent(object):
             raise TypeError(message)
         else:
             # Checks if the type is supported by the class
-            element_type: str = self._element.type
+            element_type: str = self._element.Type
             for item in self.VALID_TYPES:
                 if item == element_type:
                     valid = True
@@ -160,9 +206,9 @@ class GuiComponent(object):
 
         After assigning a Sap element to the object,
         the object is dereferenced in some interface updates."""
-        valid:bool = False
+        valid: bool = False
         try:
-            element_type: str = self._element.type
+            element_type: str = self._element.Type
             for item in self.VALID_TYPES:
                 if item == element_type:
                     valid = True
@@ -176,8 +222,12 @@ class GuiComponent(object):
 
     def __init__(self: object, element: object = None):
         # Constructor.
-        self._element = element
-
+        if element is None:
+            self._element = element
+        elif hasattr(element, 'Type'):
+            self._element = element
+        else:
+            raise AttributeError(name='Type')
 
 # TODO Create class based on the documentation of the 'GuiComponentCollection'
 # TODO Create class based on the documentation of the 'GuiConnection'
