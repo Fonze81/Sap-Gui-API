@@ -23,6 +23,7 @@
         "donjayamanne.python-environment-manager",
         "felipecaputo.git-project-manager",
         "eamodio.gitlens",
-        "GitHub.vscode-pull-request-github"
+        "github.vscode-pull-request-github",
+        "streetsidesoftware.code-spell-checker"
     ]
 }
