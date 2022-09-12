@@ -14,9 +14,6 @@
         "mhutchie.git-graph",
         "tabnine.tabnine-vscode",
         "frhtylcn.pythonsnippets",
-        "ms-toolsai.jupyter",
-        "ms-toolsai.jupyter-keymap",
-        "ms-toolsai.jupyter-renderers",
         "ms-vscode.test-adapter-converter",
         "pkief.material-icon-theme",
         "bierner.markdown-mermaid",
@@ -25,6 +22,7 @@
         "bierner.markdown-preview-github-styles",
         "donjayamanne.python-environment-manager",
         "felipecaputo.git-project-manager",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "GitHub.vscode-pull-request-github"
     ]
 }
