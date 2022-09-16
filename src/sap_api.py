@@ -374,16 +374,31 @@ class GuiVComponent(GuiComponent):
     @final
     @property
     def acc_text(self) -> str:
+        """SAP property 'AccText'.
+
+        Returns:
+            str: An additional text for accessibility support.
+        """
         return self._element.AccText
 
     @final
     @property
     def acc_text_on_request(self) -> str:
+        """SAP property 'AccTextOnRequest'.
+
+        Returns:
+            str: An additional text for accessibility support.
+        """
         return self._element.AccTextOnRequest
 
     @final
     @property
     def acc_tooltip(self) -> str:
+        """SAP property 'AccTooltip'.
+
+        Returns:
+            str: An additional tooltip text for accessibility support.
+        """
         return self._element.AccTooltip
 
     @final
@@ -394,6 +409,12 @@ class GuiVComponent(GuiComponent):
     @final
     @property
     def default_tooltip(self) -> str:
+        """SAP property 'DefaultTooltip'.
+
+        Returns:
+            str: Tooltip text generated from the short text defined in the data
+                dictionary for the given screen element type.
+        """
         return self._element.DefaultTooltip
 
     @final
@@ -409,6 +430,12 @@ class GuiVComponent(GuiComponent):
     @final
     @property
     def icon_name(self) -> str:
+        """SAP property 'IconName'.
+
+        Returns:
+            str: If the object has been assigned an icon, then this property is
+                the name of the icon, otherwise it is an empty string.
+        """
         return self._element.IconName
 
     @final

@@ -147,6 +147,7 @@ class TestGuiComponent(unittest.TestCase):
         obj: GuiComponent = GuiComponent(obj_mock)
         self.assertEqual(obj.type_as_number, 0)
 
+
 class MockGuiVComponent:
     def __init__(self,
                  type='str type',
@@ -155,6 +156,11 @@ class MockGuiVComponent:
                  name='str name',
                  parent={},
                  type_as_number=1,
+                 acc_text='str acc_text',
+                 acc_text_on_request='str acc_text_on_request',
+                 acc_tooltip='str acc_tooltip',
+                 default_tooltip='str default_tooltip',
+                 icon_name='str icon_name',
                  text='str text',
                  tooltip='str tooltip',
                  height=1000,
@@ -169,6 +175,11 @@ class MockGuiVComponent:
         self.Parent: object = parent
         self.Type: str = type
         self.TypeAsNumber: int = type_as_number
+        self.AccText: str = acc_text
+        self.AccTextOnRequest: str = acc_text_on_request
+        self.AccTooltip: str = acc_tooltip
+        self.DefaultTooltip: str = default_tooltip
+        self.IconName: str = icon_name
         self.Text: str = text
         self.Tooltip: str = tooltip
         self.Height: int = height
@@ -178,8 +189,10 @@ class MockGuiVComponent:
         self.Top: int = top
         self.Width: int = width
 
+
 class MockGuiVComponentNoType(MockGuiComponentNoType):
     pass
+
 
 class TestGuiComponent(unittest.TestCase):
 
@@ -477,6 +490,37 @@ class TestGuiVComponent(unittest.TestCase):
         obj_mock: MockGuiVComponent = MockGuiVComponent("GuiVComponent")
         obj: GuiVComponent = GuiVComponent(obj_mock)
         self.assertEqual(obj.width, 1005)
+
+    def test_get_acc_text(self) -> None:
+        """The object has the 'AccText' attribute and its value is compatible."""
+        obj_mock: MockGuiVComponent = MockGuiVComponent("GuiVComponent")
+        obj: GuiVComponent = GuiVComponent(obj_mock)
+        self.assertEqual(obj.acc_text, 'str acc_text')
+
+    def test_get_acc_text_on_request(self) -> None:
+        """The object has the 'AccTextOnRequest' attribute and its value is compatible."""
+        obj_mock: MockGuiVComponent = MockGuiVComponent("GuiVComponent")
+        obj: GuiVComponent = GuiVComponent(obj_mock)
+        self.assertEqual(obj.acc_text_on_request, 'str acc_text_on_request')
+
+    def test_get_acc_tooltip(self) -> None:
+        """The object has the 'AccTooltip' attribute and its value is compatible."""
+        obj_mock: MockGuiVComponent = MockGuiVComponent("GuiVComponent")
+        obj: GuiVComponent = GuiVComponent(obj_mock)
+        self.assertEqual(obj.acc_tooltip, 'str acc_tooltip')
+
+    def test_get_default_tooltip(self) -> None:
+        """The object has the 'DefaultTooltip' attribute and its value is compatible."""
+        obj_mock: MockGuiVComponent = MockGuiVComponent("GuiVComponent")
+        obj: GuiVComponent = GuiVComponent(obj_mock)
+        self.assertEqual(obj.default_tooltip, 'str default_tooltip')
+
+    def test_get_icon_name(self) -> None:
+        """The object has the 'IconName' attribute and its value is compatible."""
+        obj_mock: MockGuiVComponent = MockGuiVComponent("GuiVComponent")
+        obj: GuiVComponent = GuiVComponent(obj_mock)
+        self.assertEqual(obj.icon_name, 'str icon_name')
+
 
 if __name__ == '__main__':
     unittest.main()
