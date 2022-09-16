@@ -7,7 +7,20 @@ Document Version: 7.60 PL1 – 2019-03-28
 https://help.sap.com/doc/9215986e54174174854b0af6bb14305a/760.01/en-US/sap_gui_scripting_api_761.pdf
 """
 
-from typing import final
+import logging
+from typing import Final, Literal, final
+
+logger: logging.Logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+# create file handler which logs even debug messages
+fh: logging.FileHandler = logging.FileHandler('./log/sap_api.log')
+fh.setLevel(logging.DEBUG)
+# create formatter and add it to the handlers
+formatter: logging.Formatter = logging.Formatter(
+    '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+fh.setFormatter(formatter)
+# add the handlers to logger
+logger.addHandler(fh)
 
 # TODO Create class based on the documentation of the 'GuiAbapEditor'
 # TODO Create class based on the documentation of the 'GuiApoGrid'
