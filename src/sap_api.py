@@ -362,49 +362,146 @@ class GuiComponent():
 # TODO Create class based on the documentation of the 'GuiUtils'
 
 
-class GuiVComponent:
+class GuiVComponent(GuiComponent):
 
-    def __init__(self,
-                 acc_label_collection,
-                 acc_text,
-                 acc_text_on_request,
-                 acc_tooltip,
-                 changeable,
-                 default_tooltip,
-                 element,
-                 _element,
-                 height,
-                 icon_name,
-                 is_symbol_font,
-                 left,
-                 modified,
-                 parent_frame,
-                 screen_left,
-                 screen_top,
-                 text,
-                 tooltip,
-                 top,
-                 width):
-        self.acc_label_collection = acc_label_collection
-        self.acc_text = acc_text
-        self.acc_text_on_request = acc_text_on_request
-        self.acc_tooltip = acc_tooltip
-        self.changeable = changeable
-        self.default_tooltip = default_tooltip
-        self.element = element
-        self._element = _element
-        self.height = height
-        self.icon_name = icon_name
-        self.is_symbol_font = is_symbol_font
-        self.left = left
-        self.modified = modified
-        self.parent_frame = parent_frame
-        self.screen_left = screen_left
-        self.screen_top = screen_top
-        self.text = text
-        self.tooltip = tooltip
-        self.top = top
-        self.width = width
+    VALID_TYPES: list = ['GuiComponent', 'GuiVComponent']
+
+    @final
+    @property
+    def acc_label_collection(self) -> object:
+        return self._element.AccLabelCollection
+
+    @final
+    @property
+    def acc_text(self) -> str:
+        return self._element.AccText
+
+    @final
+    @property
+    def acc_text_on_request(self) -> str:
+        return self._element.AccTextOnRequest
+
+    @final
+    @property
+    def acc_tooltip(self) -> str:
+        return self._element.AccTooltip
+
+    @final
+    @property
+    def changeable(self) -> bool:
+        return self._element.Changeable
+
+    @final
+    @property
+    def default_tooltip(self) -> str:
+        return self._element.DefaultTooltip
+
+    @final
+    @property
+    def height(self) -> int:
+        """SAP property 'Height'.
+
+        Returns:
+            int: Height of the component in pixels.
+        """
+        return self._element.Height
+
+    @final
+    @property
+    def icon_name(self) -> str:
+        return self._element.IconName
+
+    @final
+    @property
+    def is_symbol_font(self) -> bool:
+        return self._element.IsSymbolFont
+
+    @final
+    @property
+    def left(self) -> int:
+        """SAP property 'Left'.
+
+        Returns:
+            int: Left position of the element in screen coordinates.
+        """
+        return self._element.Left
+
+    @final
+    @property
+    def modified(self) -> bool:
+        return self._element.Modified
+
+    @final
+    @property
+    def parent_frame(self) -> object:
+        return self._element.ParentFrame
+
+    @final
+    @property
+    def screen_left(self) -> int:
+        """SAP property 'ScreenLeft'.
+
+        Returns:
+            int: The y position of the component in screen coordinates.
+        """
+        return self._element.ScreenLeft
+
+    @final
+    @property
+    def screen_top(self) -> int:
+        """SAP property 'ScreenTop'.
+
+        Returns:
+            int: The x position of the component in screen coordinates.
+        """
+        return self._element.ScreenTop
+
+    @final
+    @property
+    def text(self) -> str:
+        """SAP property 'Text'.
+
+        Returns:
+            str: The value of this property very much depends on the type of
+                the object on which it is called. This is obvious for text fields
+                or menu items. On the other hand this property is empty for
+                toolbar buttons and is the class id for shells. You can read
+                the text property of a label, but you can’t change it, whereas
+                you can only set the text property of a password field, but
+                not read it.
+        """
+        return self._element.Text
+
+    @final
+    @property
+    def tooltip(self) -> str:
+        """SAP property 'Tooltip'.
+
+        Returns:
+            str: The tooltip contains a text which is designed to help a user
+                understand the meaning of a given text field or button.
+        """
+        return self._element.Tooltip
+
+    @final
+    @property
+    def top(self) -> int:
+        """SAP property 'Top'.
+
+        Returns:
+            int: Top coordinate of the element in screen coordinates.
+        """
+        return self._element.Top
+
+    @final
+    @property
+    def width(self) -> int:
+        """SAP property 'Width'.
+
+        Returns:
+            int: Width of the component in pixels.
+        """
+        return self._element.Width
 
     def dump_state(self, inner_object):
         pass
