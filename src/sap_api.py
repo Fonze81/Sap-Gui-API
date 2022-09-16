@@ -38,208 +38,272 @@ logger.addHandler(fh)
 # TODO Create class based on the documentation of the 'GuiComboBoxEntry'
 
 
-class GuiComponent(object):
-    """
-    GuiComponent is the base class for most classes in the Scripting API.
-    It was designed to allow generic programming, meaning you can work with objects without knowing
-    their exact type.
+class GuiComponent():
+    """The base class for most classes in the Scripting API.
 
-    Attributes
-    ----------
-        element : object
-            Attribute to be referenced to the SAP element.
-        container_type : bool (read-only)
-            This property is TRUE, if the object is a container and therefore
-            has the Children property.
-        is_valid : bool (read-only)
-            Checks if the element is valid.
-            After assigning a Sap element to the object,
-            the object is dereferenced in some interface updates.
-        container_type : bool (read-only)
-            This property is TRUE, if the object is a container and therefore
-            has the Children property.
-        id : str (read-only)
-            An object id is a unique textual identifier for the object. It is
-            built in a URLlike formatting, starting at the GuiApplication
-            object and drilling down to the respective object.
-        name :  str (read-only)
-            The name property is especially useful when working with
-            simple scripts that only access dynpro fields.
-            In that case a field can be found using its name and type information,
-            which is easier to read than a possibly very long id.
-            However, there is no guarantee that there are no two objects with the
-            same name and type in a given dynpro.
-        parent : object (read-only)
-            The parent of an object is one level higher in the runtime hierarchy.
-            An object is always in the children collection of its parent.
-        type : str (read-only)
-            The type information of GuiComponent can be used to determine which properties and
-            methods an object supports.
-            The value of the type string is the name of the type taken
-            from this documentation.
-        type_as_number : int (read-only)
-            While the Type property is a string value,
-            the TypeAsNumber property is a long value that can alternatively
-            be used to identify an object's type .
-            It was added for better performance in methods such as FindByIdEx.
-            Possible values for this property are taken from the
-            GuiComponentType enumeration.
+    It was designed to allow generic programming,
+    meaning you can work with objects without knowing their exact type.
+
+    Simulates how the SAP class 'GuiComponent Object' object works.
+    The difference is that the reference is made by the element attribute and not directly to the object.
+    The reference can be made on initialization or by setting the element attribute.
+
+    Note:
+        For more information, see the developer guide for SAP GUI Scripting API,
+        version 7.60 PL1 – 2019-03-28, item 1.2.15, page 78.
+
+    Keyword Arguments:
+        element (object) : A reference to the SAP element. (default: {None})
+        validate_type (bool): If is 'false', validation of type is disabled.
+            This is not recommended, except for collections. (default: {True})
+
+    Attributes:
+        element (object): A reference to the SAP element.
+        is_valid (bool): Checks if the reference to a SAP element is valid. {Read-only}
+        container_type (bool): SAP property 'ContainerType'. {Read-only}
+        id (str): SAP property 'Id'. {Read-only}
+        name (str): SAP property 'Parent'. {Read-only}
+        parent (str): SAP property 'Parent'. {Read-only}
+        type (str): SAP property 'Type'. {Read-only}
+        type_as_number (str): SAP property 'TypeAsNumber'. {Read-only}
+
+    Examples:
+        >>> obj = GuiComponent()
+        >>> obj.element = Session.FindById('id_of_element')
+
+        or
+
+        >>> obj = GuiComponent(Session.FindById('id_of_element'))
+
+    Raises:
+        TypeError: Object is incompatible with class.
+        TypeError: SAP element type is incompatible with class.
+        TypeError: None Type. The object was not referenced to a SAP element.
+        TypeError: This object object does not have the property.
     """
 
     # See PEP 591 – Adding a final qualifier to typing
     VALID_TYPES: list = ['GuiComponent']
 
+    def __init__(self, element: object = None, validate_type: bool = True) -> None:
+        """Constructor."""
+        self.__validate_type: bool = validate_type
+        self.element: object = element
+
+    @final
     @property
-    def element(self: object) -> object:
+    def element(self) -> object:
+        """A reference to the SAP element.
+
+        The link between the SAP element and this object is made by the 'element' attribute.
+        Is defined at initialization or by setting this attribute.
+        Checks if the SAP element is compatible with the expected types for this class defined in the 'VALID_TYPES' constant.
+        If the '____validate_type' attribute is 'false', validation is disabled. This is not recommended, except for collections.
+
+        Arguments:
+            value (object): SAP element.
+
+        Raises:
+            TypeError: Object is incompatible with class.
+            TypeError: SAP element type is incompatible with class.
+
+        Returns:
+            object: None or SAP element.
         """
-        Attribute to be referenced to the SAP element.
-        """
-        self._validate_element_type()
         return self._element
 
+    @final
     @element.setter
-    def element(self: object, element_sap: object):
-        if element_sap is None:
-            self._element = element_sap
-        elif hasattr(element_sap, 'Type'):
-            self._element = element_sap
+    def element(self, value: object) -> None:
+        if value is None:
+            self._element: object = None
+        elif not self.__has_type(value):
+            self._element = None
+            message: str = f"Object '{value}' is incompatible with class '{type(self).__name__}'."
+            logger.error(message)
+            raise TypeError(message)
+        elif self.__compatible_type(value):
+            self._element = value
+        elif self.__validate_type:
+            message: str = f"Element type '{value}' is incompatible with class '{type(self).__name__}'."
+            logger.error(message)
+            raise TypeError(message)
         else:
-            raise AttributeError(name='Type')
-        self._validate_element_type()
+            message: str = f"The incompatibility between element type '{value}' and class '{type(self).__name__}' is disregarded."
+            logger.warning(message)
+            self._element = value
 
+    @final
     @property
-    def container_type(self: object) -> bool:
-        """
-        *Read-only*.
+    def is_valid(self) -> bool:
+        """Checks if the reference to a SAP element is valid.
 
-        This property is TRUE, if the object is a container and therefore
-        has the Children property.
+        Returns:
+            bool: True if valid.
         """
-        self._validate_element_type()
+        result: bool = False
+        try:
+            if self.__compatible_type('Type'):
+                result: Literal[True] = True
+        except:
+            result: Literal[False] = False
+        finally:
+            return result
+
+    @final
+    @property
+    def container_type(self) -> bool:
+        """SAP property 'ContainerType'.
+
+        This property is TRUE, if the object is a container and therefore has the Children property.
+
+        Returns:
+            bool: True if the object is a container.
+        """
+        self.__has_valid('ContainerType')
         return self._element.ContainerType
 
+    @final
     @property
-    def id(self: object) -> str:
-        """
-        *Read-only*.
+    def id(self) -> str:
+        """SAP property 'Id'.
 
-        An object id is a unique textual identifier for the object. It is
-        built in a URLlike formatting, starting at the GuiApplication
-        object and drilling down to the respective object.
+        An object id is a unique textual identifier for the object.
+        It is built in a URLlike formatting, starting at the GuiApplication object
+        and drilling down to the respective object.
+
+        Returns:
+            str: A unique textual identifier of SAP element.
         """
-        self._validate_element_type()
+        self.__has_valid('Id')
         return self._element.Id
 
+    @final
     @property
-    def name(self: object) -> str:
-        """
-        *Read-only*.
+    def name(self) -> str:
+        """SAP property 'Name'.
 
-        The name property is especially useful when working with
-        simple scripts that only access dynpro fields.
-        In that case a field can be found using its name and type information,
-        which is easier to read than a possibly very long id.
-        However, there is no guarantee that there are no two objects with the
-        same name and type in a given dynpro.
+        The name property is especially useful when working with simple scripts that only access dynpro fields.
+        In that case a field can be found using its name and type information, which is easier to read than a possibly very long id.
+        However, there is no guarantee that there are no two objects with the same name and type in a given dynpro.
+
+        Returns:
+            str: Name of SAP element.
         """
-        self._validate_element_type()
+        self.__has_valid('Name')
         return self._element.Name
 
+    @final
     @property
-    def parent(self: object) -> object:
-        """
-        *Read-only*.
+    def parent(self) -> object:
+        """SAP property 'Parent'.
 
         The parent of an object is one level higher in the runtime hierarchy.
         An object is always in the children collection of its parent.
-        """
-        self._validate_element_type()
-        return self._element.Parent
-
-    @property
-    def type(self: object) -> str:
-        """
-        *Read-only*.
-
-        The type information of GuiComponent can be used to determine which properties and
-        methods an object supports.
-        The value of the type string is the name of the type taken
-        from this documentation.
-        """
-        self._validate_element_type()
-        return self._element.Type
-
-    @property
-    def type_as_number(self: object) -> int:
-        """
-        *Read-only*.
-
-        While the Type property is a string value,
-        the TypeAsNumber property is a long value that can alternatively
-        be used to identify an object's type .
-        It was added for better performance in methods such as FindByIdEx.
-        Possible values for this property are taken from the
-        GuiComponentType enumeration.
-        """
-        self._validate_element_type()
-        return self._element.TypeAsNumber
-
-    @final  # See PEP 591 – Adding a final qualifier to typing
-    def _validate_element_type(self) -> bool:
-        """Check if the type of the assigned 'element' attribute is compatible.
-
-        Raises:
-            TypeError: The 'element' attribute has not been set.
-            TypeError: The type of 'element' assigned is  not supported.
 
         Returns:
-            bool: Returns true if supported
+            object: The parent of SAP element. #TODO
         """
-        valid: bool = False
-        # If the attribute has not been defined raise a TypeError
-        if self._element == None:
-            message = f"The 'element' attribute of class '{type(self).__name__}' object has not been set."
+        self.__has_valid('Parent')
+        return self._element.Parent
+
+    @final
+    @property
+    def type(self) -> str:
+        """SAP property 'Type'.
+
+        The type information of GuiComponent can be used to determine which properties and methods an object supports.
+
+        Returns:
+            str: Name of the type SAP element.
+        """
+        self.__has_valid('Type')
+        return self._element.Type
+
+    @final
+    @property
+    def type_as_number(self) -> int:
+        """SAP property 'TypeAsNumber'.
+
+        While the 'Type' property is a string value,
+        the 'TypeAsNumber' property is a long value that can alternatively
+        be used to identify an object's type.
+        It was added for better performance in methods such as FindByIdEx.
+
+        Returns:
+            int: Possible values for this property are taken from the GuiComponentType enumeration.
+        """
+        self.__has_valid('TypeAsNumber')
+        return self._element.TypeAsNumber
+
+    @final
+    def __compatible_type(self, value: object) -> bool:
+        """Checks for type compatibility.
+
+        Checks if the protected attribute '_element' in your property 'Type'
+        has one of the types listed in the constant 'VALID_TYPES'.
+
+        Arguments:
+            value (object): Object to be checked.
+
+        Returns:
+            bool: True if compatible.
+        """
+        result: Literal[False] = False
+        element_type: str = value.Type
+        for item in self.VALID_TYPES:
+            if item == element_type:
+                result: Literal[True] = True
+        return result
+
+    @final
+    def __has_type(self, value: object) -> bool:
+        """Checks if the object has 'Type' property.
+
+        Arguments:
+            value (object): Object to be checked.
+
+        Returns:
+            bool: Returns true if has the 'Type' property.
+        """
+        return hasattr(value, 'Type')
+
+    @final
+    def __has_valid(self, value: str) -> bool:
+        """Checks if the '_element' protected attribute has a SAP property.
+
+        Throws an error if the SAP element is not referenced (None).
+        Throws an error if the SAP element doesn't have the property.
+        Hint!!! It's possible that the SAP interface has been updated and the object has lost the reference.
+        Hint!!! It's possible that the connection to SAP was dropped.
+        Hint!!! It's possible that has occurred an access violation to the protected attribute '_element'.
+
+        Args:
+            value (str): Name of the SAP property.
+
+        Raises:
+            TypeError: None Type. The object was not referenced to a SAP element.
+            TypeError: This object object does not have the property.
+
+        Returns:
+            bool: Returns true if has the SAP property.
+        """
+        result: Literal[False] = False
+        if self._element is None:
+            message: str = f"None Type. The object '{self}' was not referenced to a Sap element."
+            logger.error(message)
+            raise TypeError(message)
+        elif not hasattr(self._element, value):
+            message: str = f"""The '{self}' object does not have the '{value}' property.
+                Validation is performed at object initialization or setting the 'element' attribute.
+                Hint!!! It's possible that the SAP interface has been updated and the object has lost the reference.
+                Hint!!! It's possible that the connection to SAP was terminated or dropped.
+                Hint!!! It's possible that has occurred an access violation to the protected attribute '_element'."""
+            logger.error(message)
             raise TypeError(message)
         else:
-            # Checks if the type is supported by the class
-            element_type: str = self._element.Type
-            for item in self.VALID_TYPES:
-                if item == element_type:
-                    valid = True
-            if valid:
-                return True
-            else:
-                message = f"The type of 'element' assigned to object of class '{type(self).__name__}' is  not supported."
-                raise TypeError(message)
-
-    @property
-    def is_valid(self: object) -> bool:
-        """Checks if the element is valid. Return True
-
-        After assigning a Sap element to the object,
-        the object is dereferenced in some interface updates."""
-        valid: bool = False
-        try:
-            element_type: str = self._element.Type
-            for item in self.VALID_TYPES:
-                if item == element_type:
-                    valid = True
-        except:
-            valid = False
-        finally:
-            if valid:
-                return True
-            else:
-                return False
-
-    def __init__(self: object, element: object = None):
-        # Constructor.
-        if element is None:
-            self._element = element
-        elif hasattr(element, 'Type'):
-            self._element = element
-        else:
-            raise AttributeError(name='Type')
+            result: Literal[True] = True
+        return result
 
 # TODO Create class based on the documentation of the 'GuiComponentCollection'
 # TODO Create class based on the documentation of the 'GuiConnection'
