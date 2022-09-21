@@ -1043,7 +1043,22 @@ class GuiStatusbar(GuiVComponent):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiStatusPane'
+class GuiStatusBarLink():
+    """SAP Class 'GuiStatusBarLink'
+
+    GuiStatusbarLink represents a so-called "service request link" that can
+    optionally be displayed in the GuiStatusBar by an application.
+    Clicking such a link executes an application specific action,
+    like launching a transaction for reporting a functional issue.
+    If GuiStatusbarLink is present, it is a child of the first GuiStatusPane
+    and its name is always link.
+    """
+
+    VALID_ENUMERATIONS: list = [130]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiTab'
 # TODO Create class based on the documentation of the 'GuiTableColumn'
 # TODO Create class based on the documentation of the 'GuiTableControl'
