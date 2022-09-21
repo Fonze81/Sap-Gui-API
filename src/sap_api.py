@@ -31,7 +31,7 @@ class GuiAbapEditor():
     GuiAbapEditor extends GuiShell.
     """
 
-    VALID_ENUMERATIONS: list = ['?'] # TODO
+    VALID_ENUMERATIONS: list = ['?']  # TODO
     """GuiComponentType constant enumerations"""
     pass
 
@@ -49,7 +49,23 @@ class GuiApoGrid():
     """GuiComponentType constant enumerations"""
     pass
 
-# TODO Create class based on the documentation of the 'GuiApplication'
+
+class GuiApplication():
+    """SAP Class 'GuiApplication'
+
+    The GuiApplication represents the process in which all SAP GUI activity
+    takes place. If the scripting component is accessed by attaching to an
+    SAPlogon process, then GuiApplication will represent SAPlogon.
+    GuiApplication is a creatable class. However, there must be only one
+    component of this type in any process.
+    GuiApplication extends GuiContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [10]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiBarChart'
 # TODO Create class based on the documentation of the 'GuiBox'
 # TODO Create class based on the documentation of the 'GuiButton'
