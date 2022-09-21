@@ -656,7 +656,20 @@ class GuiFrameWindow(GuiVContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiGOSShell'
+class GuiGOSShell(GuiVContainer):
+    """SAP Class 'GuiGOSShell'
+
+    The GuiGosShell is only available in New Visual Design mode.
+    The type prefix is shellcont, the name is the last part of the id,
+    shellcont[n].
+    GuiGOSShell extends GuiVContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [123]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiGraphAdapt'
 # TODO Create class based on the documentation of the 'GuiGridView'
 # TODO Create class based on the documentation of the 'GuiHTMLViewer'
