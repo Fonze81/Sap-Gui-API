@@ -991,7 +991,17 @@ class GuiSimpleContainer(GuiVContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiSplit'
+class GuiSplit(GuiShell):
+    """SAP Class 'GuiSplit'
+
+    GuiSplit extends GuiShell.
+    """
+
+    VALID_ENUMERATIONS: list = ['?'] # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiSplitterContainer'
 # TODO Create class based on the documentation of the 'GuiStage'
 # TODO Create class based on the documentation of the 'GuiStatusbar'
