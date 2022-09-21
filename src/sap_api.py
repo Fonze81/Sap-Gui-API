@@ -209,7 +209,16 @@ class GuiComboBoxControl(GuiShell):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiComboBoxEntry'
+class GuiComboBoxEntry():
+    """SAP Class 'GuiComboBoxEntry'
+
+    Members of the Entries collection of a GuiComboBox are of type
+    GuiComBoxEntry.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
 
 
 class GuiComponent():
