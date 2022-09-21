@@ -1028,7 +1028,21 @@ class GuiStage():
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiStatusbar'
+class GuiStatusbar(GuiVComponent):
+    """SAP Class 'GuiStatusbar'
+
+    GuiStatusbar represents the message displaying part of the status bar on
+    the bottom of the SAP GUI window. It does not include the system and login
+    information displayed in the rightmost area of the status bar as these are
+    available from the GuiSessionInfo object. The type prefix is sbar.
+    GuiStatusbar extends GuiVComponent.
+    """
+
+    VALID_ENUMERATIONS: list = [103]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiStatusPane'
 # TODO Create class based on the documentation of the 'GuiTab'
 # TODO Create class based on the documentation of the 'GuiTableColumn'
