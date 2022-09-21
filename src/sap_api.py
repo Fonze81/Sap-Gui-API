@@ -977,7 +977,20 @@ class GuiShell(GuiVContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiSimpleContainer'
+class GuiSimpleContainer(GuiVContainer):
+    """SAP Class 'GuiSimpleContainer'
+
+    This container represents non-scrollable subscreens. It does not have any
+    functionality apart from to the inherited interfaces.
+    The type prefix is sub, the name is generated from the data dictionary settings.
+    GuiSimpleContainer extends GuiVContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [71]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiSplit'
 # TODO Create class based on the documentation of the 'GuiSplitterContainer'
 # TODO Create class based on the documentation of the 'GuiStage'
