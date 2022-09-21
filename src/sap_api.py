@@ -695,7 +695,18 @@ class GuiGridView(GuiShell):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiHTMLViewer'
+class GuiHTMLViewer(GuiShell):
+    """SAP Class 'GuiHTMLViewer'
+
+    The GuiHTMLViewer is used to display an HTML document inside SAP GUI.
+    GuiHTMLViewer extends GuiShell.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiInputFieldControl'
 # TODO Create class based on the documentation of the 'GuiLabel'
 # TODO Create class based on the documentation of the 'GuiMainWindow'
