@@ -615,7 +615,18 @@ class GuiEAIViewer2D(GuiShell):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiEAIViewer3D'
+class GuiEAIViewer3D(GuiShell):
+    """SAP Class 'GuiEAIViewer3D'
+
+    The GuiEAIViewer3D control is used to view 3-dimensional graphic images in
+    the SAP system.
+    GuiEAIViewer3D extends GuiShell.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
 # TODO Create class based on the documentation of the 'GuiEnum'
 # TODO Create class based on the documentation of the 'GuiFrameWindow'
 # TODO Create class based on the documentation of the 'GuiGOSShell'
