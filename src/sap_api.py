@@ -80,7 +80,21 @@ class GuiBarChart(GuiShell):
     """GuiComponentType constant enumerations"""
     pass
 
-# TODO Create class based on the documentation of the 'GuiBox'
+
+class GuiBox(GuiVComponent):
+    """SAP Class 'GuiBox'
+
+    A GuiBox is a simple frame with a name. The items inside the frame are not
+    children of the box. The type prefix is box.
+    The name property is the ABAP fieldname.
+    GuiBox extends GuiVComponent.
+    """
+
+    VALID_ENUMERATIONS: list = [62]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiButton'
 # TODO Create class based on the documentation of the 'GuiCalendar'
 # TODO Create class based on the documentation of the 'GuiChart'
