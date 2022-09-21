@@ -933,7 +933,23 @@ class GuiScrollContainer(GuiVContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiSession'
+class GuiSession(GuiContainer):
+    """SAP Class 'GuiSession'
+
+    The GuiSession provides the context in which a user performs a certain
+    task such as working with a transaction. It is therefore the access point
+    for applications, which record a user's actions regarding a specific task
+    or play back those actions.
+    The type prefix is ses, the name is ses plus the session number in square
+    brackets.
+    GuiSession extends GuiContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [12]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiSessionInfo'
 # TODO Create class based on the documentation of the 'GuiShell'
 # TODO Create class based on the documentation of the 'GuiSimpleContainer'
