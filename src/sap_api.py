@@ -809,7 +809,20 @@ class GuiModalWindow(GuiFrameWindow):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiNetChart'
+class GuiNetChart():
+    """SAP Class 'GuiNetChart'
+
+    The GuiNetChart is a powerful tool to display and modify entity
+    relationship diagrams. It is of a very technical nature and should only be
+    used for recording and playback, as most of the parameters cannot be
+    determined in any other way.
+    """
+
+    VALID_ENUMERATIONS: list = ['?'] # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiOfficeIntegration'
 # TODO Create class based on the documentation of the 'GuiOkCodeField'
 # TODO Create class based on the documentation of the 'GuiPasswordField'
