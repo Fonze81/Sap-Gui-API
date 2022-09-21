@@ -893,7 +893,18 @@ class GuiRadioButton(GuiVComponent):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiSapChart'
+class GuiSapChart():
+    """SAP Class 'GuiSapChart'
+
+    For the SAP chart control only basic members from GuiShell are available.
+    Recording and playback is not possible.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiScrollbar'
 # TODO Create class based on the documentation of the 'GuiScrollContainer'
 # TODO Create class based on the documentation of the 'GuiSession'
