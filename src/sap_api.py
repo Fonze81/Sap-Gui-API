@@ -1165,7 +1165,20 @@ class GuiTextField(GuiVComponent):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiTitlebar'
+class GuiTitlebar(GuiVContainer):
+    """SAP Class 'GuiTitlebar'
+
+    The titlebar is only displayed and exposed as a separate object in New
+    Visual Design mode.
+    The type prefix and name of GuiTitlebar are titl.
+    GuiTitlebar extends GuiVContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [102]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiToolbar'
 # TODO Create class based on the documentation of the 'GuiToolbarControl'
 # TODO Create class based on the documentation of the 'GuiTree'
