@@ -707,7 +707,19 @@ class GuiHTMLViewer(GuiShell):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiInputFieldControl'
+class GuiInputFieldControl(GuiShell):
+    """SAP Class 'GuiInputFieldControl'
+
+    GuiInputFieldControl offers an input field that can be used inside control
+    containers (unlike the Dynpro element represented by GuiTextField).
+    GuiInputFieldControl extends GuiShell.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiLabel'
 # TODO Create class based on the documentation of the 'GuiMainWindow'
 # TODO Create class based on the documentation of the 'GuiMap'
