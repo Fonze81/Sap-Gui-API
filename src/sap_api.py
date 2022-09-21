@@ -268,7 +268,7 @@ class GuiComponent():
 
     # See PEP 591 – Adding a final qualifier to typing
     VALID_TYPES: list = ['GuiComponent']
-    VALID_ENUMERATIONS: list = [0] # TODO
+    VALID_ENUMERATIONS: list = [0]  # TODO
 
     def __init__(self, element: object = None, validate_type: bool = True) -> None:
         """Constructor."""
@@ -490,7 +490,20 @@ class GuiComponent():
             result: Literal[True] = True
         return result
 
-# TODO Create class based on the documentation of the 'GuiComponentCollection'
+
+class GuiComponentCollection():
+    """SAP Class 'GuiComponentCollection'
+
+    The GuiComponentCollection is used for collections elements such as the
+    children property of containers. Each element of the collection is an
+    extension of GuiComponent.
+    """
+
+    VALID_ENUMERATIONS: list = [128]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiConnection'
 # TODO Create class based on the documentation of the 'GuiContainer'
 # TODO Create class based on the documentation of the 'GuiContainerShell'
