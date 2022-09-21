@@ -1059,6 +1059,20 @@ class GuiStatusBarLink():
     pass
 
 
+class GuiStatusPane():
+    """SAP Class 'GuiStatusPane'
+
+    The parent of the GuiStatusPane objects is the status bar (see also
+    GuiStatusbar Object). The GuiStatusPane objects reflect the individual
+    areas of the status bar, for example "pane[0]" refers to the section of
+    the status bar where the messages are displayed.
+    """
+
+    VALID_ENUMERATIONS: list = [43]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiTab'
 # TODO Create class based on the documentation of the 'GuiTableColumn'
 # TODO Create class based on the documentation of the 'GuiTableControl'
