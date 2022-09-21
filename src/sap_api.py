@@ -745,7 +745,18 @@ class GuiMainWindow(GuiFrameWindow):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiMap'
+class GuiMap():
+    """SAP Class 'GuiMap'
+
+    For the map control only basic members from GuiShell are available.
+    Recording and playback is not possible.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiMenu'
 # TODO Create class based on the documentation of the 'GuiMenubar'
 # TODO Create class based on the documentation of the 'GuiMessageWindow'
