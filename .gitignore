@@ -156,3 +156,5 @@ manuals
 
 # Folder with software installers used in development
 software installers
+desktop.ini
+img/python.ico
