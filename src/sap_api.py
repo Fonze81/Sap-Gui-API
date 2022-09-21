@@ -95,7 +95,22 @@ class GuiBox(GuiVComponent):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiButton'
+class GuiButton(GuiVComponent):
+    """SAP Class 'GuiButton'
+
+    GuiButton represents all push buttons that are on dynpros, the toolbar or
+    in table controls.  The type prefix is btn, the name property is the
+    fieldname taken from the SAP data dictionary
+    There is one exception: for tabstrip buttons, it is the button id set in
+    screen painter that is taken from the SAP data dictionary.
+    GuiButton extends GuiVComponent.
+    """
+
+    VALID_ENUMERATIONS: list = [40]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiCalendar'
 # TODO Create class based on the documentation of the 'GuiChart'
 # TODO Create class based on the documentation of the 'GuiCheckBox'
