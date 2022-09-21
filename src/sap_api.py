@@ -905,7 +905,18 @@ class GuiSapChart():
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiScrollbar'
+class GuiScrollbar():
+    """SAP Class 'GuiScrollbar'
+
+    The GuiScrollbar class is a utility class used for example in
+    GuiScrollContainer or GuiTableControl.
+    """
+
+    VALID_ENUMERATIONS: list = [100]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiScrollContainer'
 # TODO Create class based on the documentation of the 'GuiSession'
 # TODO Create class based on the documentation of the 'GuiSessionInfo'
