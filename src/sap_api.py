@@ -1125,7 +1125,20 @@ class GuiTableRow(GuiComponentCollection):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiTabStrip'
+class GuiTabStrip(GuiVContainer):
+    """SAP Class 'GuiTabStrip'
+
+    A tab strip is a container whose children are of type GuiTab.
+    The type prefix is tabs, the name is the fieldname taken from
+    the SAP data dictionary.
+    GuiTabStrip extends GuiVContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [90]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiTextedit'
 # TODO Create class based on the documentation of the 'GuiTextField'
 # TODO Create class based on the documentation of the 'GuiTitlebar'
