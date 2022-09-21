@@ -9,5 +9,7 @@
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true,
     "python.analysis.inlayHints.functionReturnTypes": true,
-    "python.analysis.inlayHints.variableTypes": true
+    "python.analysis.inlayHints.variableTypes": true,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 79
 }
