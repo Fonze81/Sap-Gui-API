@@ -963,7 +963,20 @@ class GuiSessionInfo():
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiShell'
+class GuiShell(GuiVContainer):
+    """SAP Class 'GuiShell'
+
+    GuiShell is an abstract object whose interface is supported by all the
+    controls. The type prefix is shell, the name is the last part of the id,
+    shell[n].
+    GuiShell extends GuiVContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [122]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiSimpleContainer'
 # TODO Create class based on the documentation of the 'GuiSplit'
 # TODO Create class based on the documentation of the 'GuiSplitterContainer'
