@@ -1139,7 +1139,19 @@ class GuiTabStrip(GuiVContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiTextedit'
+class GuiTextedit(GuiVComponent):
+    """SAP Class 'GuiTextedit'
+
+    The type prefix is txt, the name is the fieldname taken from the
+    SAP data dictionary.
+    GuiTextField extends GuiVComponent.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiTextField'
 # TODO Create class based on the documentation of the 'GuiTitlebar'
 # TODO Create class based on the documentation of the 'GuiToolbar'
