@@ -1217,12 +1217,28 @@ class GuiTree(GuiShell):
     GuiTree extends GuiShell
     """
 
-    VALID_ENUMERATIONS: list = ['?'] # TODO
+    VALID_ENUMERATIONS: list = ['?']  # TODO
     """GuiComponentType constant enumerations"""
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiUserArea'
+class GuiUserArea(GuiVContainer):
+    """SAP Class 'GuiUserArea'
+
+    The GuiUserArea comprises the area between the toolbar and statusbar for
+    windows of GuiMainWindow type and the area between the titlebar and
+    toolbar for modal windows, and may also be limited by docker controls.
+    The standard dynpro elements can be found only in this area,
+    with the exception of buttons, which are also found in the toolbars.
+    The type prefix and name are usr.
+    GuiUserArea extends GuiVContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [74]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiUtils'
 
 
