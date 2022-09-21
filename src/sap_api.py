@@ -137,7 +137,19 @@ class GuiChart():
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiCheckBox'
+class GuiCheckBox(GuiVComponent):
+    """SAP Class 'GuiCheckBox'
+
+    The type prefix is chk, the name is the fieldname taken from the SAP
+    data dictionary.
+    GuiCheckBox extends GuiVComponent.
+    """
+
+    VALID_ENUMERATIONS: list = [42]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiCollection'
 # TODO Create class based on the documentation of the 'GuiColorSelector'
 # TODO Create class based on the documentation of the 'GuiComboBox'
