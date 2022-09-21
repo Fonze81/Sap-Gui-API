@@ -35,7 +35,20 @@ class GuiAbapEditor():
     """GuiComponentType constant enumerations"""
     pass
 
-# TODO Create class based on the documentation of the 'GuiApoGrid'
+
+class GuiApoGrid():
+    """SAP Class 'GuiApoGrid'
+
+    The GuiApoGrid object is component, which is similar to GuiGridView,
+    but which contains additional SCM specific functions (used for example
+    in transaction /sapapo/sdp94).
+    GuiApoGrid extends GuiShell.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
 # TODO Create class based on the documentation of the 'GuiApplication'
 # TODO Create class based on the documentation of the 'GuiBarChart'
 # TODO Create class based on the documentation of the 'GuiBox'
