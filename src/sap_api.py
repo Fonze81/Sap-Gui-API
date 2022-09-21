@@ -720,7 +720,19 @@ class GuiInputFieldControl(GuiShell):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiLabel'
+class GuiLabel(GuiVComponent):
+    """SAP Class 'GuiLabel'
+
+    The type prefix is lbl, the name is the fieldname taken
+    from the SAP data dictionary.
+    GuiLabel extends GuiVComponent.
+    """
+
+    VALID_ENUMERATIONS: list = [30]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiMainWindow'
 # TODO Create class based on the documentation of the 'GuiMap'
 # TODO Create class based on the documentation of the 'GuiMenu'
