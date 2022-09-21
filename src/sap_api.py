@@ -164,7 +164,19 @@ class GuiCollection():
     """GuiComponentType constant enumerations"""
     pass
 
-# TODO Create class based on the documentation of the 'GuiColorSelector'
+
+class GuiColorSelector(GuiShell):
+    """SAP Class 'GuiColorSelector'
+
+    GuiColorSelector displays a set of colors for selection.
+    It extends GuiShell.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiComboBox'
 # TODO Create class based on the documentation of the 'GuiComboBoxControl'
 # TODO Create class based on the documentation of the 'GuiComboBoxEntry'
