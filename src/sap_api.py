@@ -1239,7 +1239,16 @@ class GuiUserArea(GuiVContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiUtils'
+class GuiUtils():
+    """SAP Class 'GuiUtils'
+
+    GuiUtils is a utility class that offers some methods for accessing files
+    or showing message boxes.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
 
 
 class GuiVComponent(GuiComponent):
