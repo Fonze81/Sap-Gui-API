@@ -599,7 +599,22 @@ class GuiDialogShell(GuiVContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiEAIViewer2D'
+class GuiEAIViewer2D(GuiShell):
+    """SAP Class 'GuiEAIViewer2D'
+
+    The GuiEAIViewer2D control is used to view 2-dimensional graphic images in
+    the SAP system. The user can carry out redlining over the loaded image.
+    The scripting wrapper for this control records all user actions during the
+    redlining process and reproduces the same actions when the recorded script
+    is replayed.
+    GuiEAIViewer2D extends GuiShell.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiEAIViewer3D'
 # TODO Create class based on the documentation of the 'GuiEnum'
 # TODO Create class based on the documentation of the 'GuiFrameWindow'
