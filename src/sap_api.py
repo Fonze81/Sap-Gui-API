@@ -150,7 +150,20 @@ class GuiCheckBox(GuiVComponent):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiCollection'
+class GuiCollection():
+    """SAP Class 'GuiCollection'
+
+    GuiCollection is similar to GuiComponentCollection, but its members are
+    not necessarily extensions of GuiComponent. It can be used to pass a
+    collection as a parameter to functions of scriptable objects.
+    An object of this class is created by calling the CreateGuiCollection
+    function of the GuiApplication.
+    """
+
+    VALID_ENUMERATIONS: list = [120]
+    """GuiComponentType constant enumerations"""
+    pass
+
 # TODO Create class based on the documentation of the 'GuiColorSelector'
 # TODO Create class based on the documentation of the 'GuiComboBox'
 # TODO Create class based on the documentation of the 'GuiComboBoxControl'
