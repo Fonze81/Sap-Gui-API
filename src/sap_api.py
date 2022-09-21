@@ -1152,7 +1152,19 @@ class GuiTextedit(GuiVComponent):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiTextField'
+class GuiTextField(GuiVComponent):
+    """SAP Class 'GuiTextField'
+
+    The type prefix is txt, the name is the fieldname taken from the
+    SAP data dictionary.
+    GuiTextField extends GuiVComponent.
+    """
+
+    VALID_ENUMERATIONS: list = [31]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiTitlebar'
 # TODO Create class based on the documentation of the 'GuiToolbar'
 # TODO Create class based on the documentation of the 'GuiToolbarControl'
