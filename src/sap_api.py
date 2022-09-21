@@ -853,7 +853,21 @@ class GuiOkCodeField(GuiVComponent):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiPasswordField'
+class GuiPasswordField(GuiTextField):
+    """SAP Class 'GuiPasswordField'
+
+    The only difference between GuiTextField and GuiPasswordField is that the
+    Text property cannot be read for a password field. The returned text is
+    always empty. The type prefix is pwd, the name is the fieldname taken
+    from the SAP data dictionary.
+    GuiPasswordField extends GuiTextField.
+    """
+
+    VALID_ENUMERATIONS: list = [33]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiPicture'
 # TODO Create class based on the documentation of the 'GuiRadioButton'
 # TODO Create class based on the documentation of the 'GuiSapChart'
