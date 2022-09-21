@@ -772,7 +772,19 @@ class GuiMenu(GuiVContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiMenubar'
+class GuiMenubar(GuiVContainer):
+    """SAP Class 'GuiMenubar'
+
+    Only the main window has a menubar. The children of the menubar are menus.
+    The type prefix and name are mbar.
+    GuiMenubar extends GuiVContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [111]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiMessageWindow'
 # TODO Create class based on the documentation of the 'GuiModalWindow'
 # TODO Create class based on the documentation of the 'GuiNetChart'
