@@ -1209,7 +1209,19 @@ class GuiToolbarControl(GuiShell):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiTree'
+class GuiTree(GuiShell):
+    """SAP Class 'GuiTree'
+
+    This object represents a tree control that can be displayed in multiple
+    different ways (simple tree, column tree,…).
+    GuiTree extends GuiShell
+    """
+
+    VALID_ENUMERATIONS: list = ['?'] # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiUserArea'
 # TODO Create class based on the documentation of the 'GuiUtils'
 
