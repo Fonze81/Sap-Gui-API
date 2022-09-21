@@ -504,7 +504,22 @@ class GuiComponentCollection():
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiConnection'
+class GuiConnection(GuiContainer):
+    """SAP Class 'GuiConnection'
+
+    A GuiConnection represents the connection between SAP GUI and an
+    application server. Connections can be opened from SAPlogon or from
+    GuiApplication's openConnection and openConnectionByConnectionString
+    methods. The type prefix for GuiConnection is con, the name is con
+    plus the connection number in square brackets.
+    GuiConnection extends GuiContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [11]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiContainer'
 # TODO Create class based on the documentation of the 'GuiContainerShell'
 # TODO Create class based on the documentation of the 'GuiContextMenu'
