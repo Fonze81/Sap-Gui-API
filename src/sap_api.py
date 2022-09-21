@@ -1099,7 +1099,20 @@ class GuiTableColumn(GuiComponentCollection):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiTableControl'
+class GuiTableControl():
+    """SAP Class 'GuiTableControl'
+
+    The table control is a standard dynpro element, in contrast to the
+    GuiCtrlGridView, which looks similar. The type prefix is tbl,
+    the name is the fieldname taken from the SAP data dictionary.
+    GuiTableControl extends GuiVContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [80]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiTableRow'
 # TODO Create class based on the documentation of the 'GuiTabStrip'
 # TODO Create class based on the documentation of the 'GuiTextedit'
