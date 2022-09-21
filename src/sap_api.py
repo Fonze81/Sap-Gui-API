@@ -196,7 +196,19 @@ class GuiComboBox(GuiVComponent):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiComboBoxControl'
+class GuiComboBoxControl(GuiShell):
+    """SAP Class 'GuiComboBoxControl'
+
+    GuiComboboxControl offers a combo box that can be used inside control
+    containers (unlike the Dynpro element represented by GuiComboBox).
+    GuiComboBoxControl extends GuiShell.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiComboBoxEntry'
 
 
