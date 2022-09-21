@@ -757,7 +757,21 @@ class GuiMap():
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiMenu'
+class GuiMenu(GuiVContainer):
+    """SAP Class 'GuiMenu'
+
+    A GuiMenu may have other GuiMenu objects as children.
+    The type prefix is menu, the name is the text of the menu item.
+    If the item does not have a text, which is the case
+    for separators, then the name is the last part of the id, menu[n].
+    GuiMenu extends GuiVContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [110]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiMenubar'
 # TODO Create class based on the documentation of the 'GuiMessageWindow'
 # TODO Create class based on the documentation of the 'GuiModalWindow'
