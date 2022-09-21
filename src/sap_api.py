@@ -868,7 +868,18 @@ class GuiPasswordField(GuiTextField):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiPicture'
+class GuiPicture(GuiShell):
+    """SAP Class 'GuiPicture'
+
+    The picture control displays a picture on an SAP GUI screen.
+    GuiPicture extends GuiShell.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiRadioButton'
 # TODO Create class based on the documentation of the 'GuiSapChart'
 # TODO Create class based on the documentation of the 'GuiScrollbar'
