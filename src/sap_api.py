@@ -520,7 +520,21 @@ class GuiConnection(GuiContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiContainer'
+class GuiContainer(GuiComponent):
+    """SAP Class 'GuiContainer'
+
+    This interface resembles GuiVContainer. The only difference is that it is
+    not intended for visual objects but rather administrative objects such as
+    connections or sessions. Objects exposing this interface will therefore
+    support GuiComponent but not GuiVComponent.
+    GuiContainer extends GuiComponent.
+    """
+
+    VALID_ENUMERATIONS: list = [70]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiContainerShell'
 # TODO Create class based on the documentation of the 'GuiContextMenu'
 # TODO Create class based on the documentation of the 'GuiCTextField'
