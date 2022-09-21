@@ -22,7 +22,19 @@ fh.setFormatter(formatter)
 # add the handlers to logger
 logger.addHandler(fh)
 
-# TODO Create class based on the documentation of the 'GuiAbapEditor'
+
+class GuiAbapEditor():
+    """SAP Class 'GuiAbapEditor'
+
+    The GuiAbapEditor object represents the new ABAP editor control available
+    as of SAP_BASIS release 6.20 (see also SAP Note 930742).
+    GuiAbapEditor extends GuiShell.
+    """
+
+    VALID_ENUMERATIONS: list = ['?'] # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
 # TODO Create class based on the documentation of the 'GuiApoGrid'
 # TODO Create class based on the documentation of the 'GuiApplication'
 # TODO Create class based on the documentation of the 'GuiBarChart'
