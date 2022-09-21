@@ -917,7 +917,22 @@ class GuiScrollbar():
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiScrollContainer'
+class GuiScrollContainer(GuiVContainer):
+    """SAP Class 'GuiScrollContainer'
+
+    This container represents scrollable subscreens. A subscreen may be
+    scrollable without actually having a scrollbar, because the existence of a
+    scrollbar depends on the amount of data displayed and the size of the
+    GuiUserArea. The type prefix is ssub, the name is generated from the data
+    dictionary settings.
+    GuiScrollContainer extends GuiVContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [72]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiSession'
 # TODO Create class based on the documentation of the 'GuiSessionInfo'
 # TODO Create class based on the documentation of the 'GuiShell'
