@@ -584,7 +584,21 @@ class GuiCustomControl(GuiVContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiDialogShell'
+class GuiDialogShell(GuiVContainer):
+    """SAP Class 'GuiDialogShell'
+
+    The GuiDialogShell is an external window that is used as a container for
+    other shells, for example a toolbar.
+    The type prefix is shellcont, the name is the last part of the id,
+    shellcont[n].
+    GuiDialogShell extends GuiVContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [125]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiEAIViewer2D'
 # TODO Create class based on the documentation of the 'GuiEAIViewer3D'
 # TODO Create class based on the documentation of the 'GuiEnum'
