@@ -566,7 +566,24 @@ class GuiCTextField(GuiTextField):
     """GuiComponentType constant enumerations"""
     pass
 
-# TODO Create class based on the documentation of the 'GuiCustomControl'
+
+class GuiCustomControl(GuiVContainer):
+    """SAP Class 'GuiCustomControl'
+
+    The GuiCustomControl is a wrapper object that is used to place ActiveX
+    controls onto dynpro screens. While GuiCustomControl is a dynpro element
+    itself, its children are of GuiContainerShell type, which is a container
+    for controls.
+    The type prefix is cntl, the name is the fieldname taken from the SAP data
+    dictionary.
+    GuiCustomControl extends GuiVContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [50]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiDialogShell'
 # TODO Create class based on the documentation of the 'GuiEAIViewer2D'
 # TODO Create class based on the documentation of the 'GuiEAIViewer3D'
