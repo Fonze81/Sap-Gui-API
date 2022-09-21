@@ -880,7 +880,19 @@ class GuiPicture(GuiShell):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiRadioButton'
+class GuiRadioButton(GuiVComponent):
+    """SAP Class 'GuiRadioButton'
+
+    The type prefix is rad, the name is the fieldname taken from the
+    SAP data dictionary.
+    GuiRadioButton extends GuiVComponent.
+    """
+
+    VALID_ENUMERATIONS: list = [41]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiSapChart'
 # TODO Create class based on the documentation of the 'GuiScrollbar'
 # TODO Create class based on the documentation of the 'GuiScrollContainer'
