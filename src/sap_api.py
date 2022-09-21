@@ -818,12 +818,25 @@ class GuiNetChart():
     determined in any other way.
     """
 
-    VALID_ENUMERATIONS: list = ['?'] # TODO
+    VALID_ENUMERATIONS: list = ['?']  # TODO
     """GuiComponentType constant enumerations"""
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiOfficeIntegration'
+class GuiOfficeIntegration(GuiShell):
+    """SAP Class 'GuiOfficeIntegration'
+
+    The GuiOfficeIntegration object (Desktop Office Integration) offers a
+    container for hosting different kinds of Office applications
+    (Microsoft Word, Microsoft Excel, Microsoft Powerpoint).
+    GuiOfficeIntegration extends GuiShell.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiOkCodeField'
 # TODO Create class based on the documentation of the 'GuiPasswordField'
 # TODO Create class based on the documentation of the 'GuiPicture'
