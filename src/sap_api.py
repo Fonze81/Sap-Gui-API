@@ -1179,7 +1179,23 @@ class GuiTitlebar(GuiVContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiToolbar'
+class GuiToolbar(GuiVContainer):
+    """SAP Class 'GuiToolbar'
+
+    Every GuiFrameWindow has a GuiToolbar. The GuiMainWindow has two toolbars
+    unless the second has been turned off by the ABAP application.
+    The upper toolbar is the system toolbar, while the second toolbar is the
+    application toolbar. The children of a GuiToolbar are buttons.
+    The indexes for toolbar buttons are determined by the virtual key values
+    defined for the button. The type prefix and name are tbar.
+    GuiToolbar extends GuiVContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [101]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiToolbarControl'
 # TODO Create class based on the documentation of the 'GuiTree'
 # TODO Create class based on the documentation of the 'GuiUserArea'
