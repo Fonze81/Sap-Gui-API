@@ -222,10 +222,11 @@ class GuiComboBoxEntry():
 
 
 class GuiComponent():
-    """The base class for most classes in the Scripting API.
+    """SAP Class 'GuiComponent'
 
-    It was designed to allow generic programming,
-    meaning you can work with objects without knowing their exact type.
+    GuiComponent is the base class for most classes in the Scripting API.
+    It was designed to allow generic programming, meaning you can work with
+    objects without knowing their exact type.
 
     Simulates how the SAP class 'GuiComponent Object' object works.
     The difference is that the reference is made by the element attribute and not directly to the object.
@@ -267,6 +268,7 @@ class GuiComponent():
 
     # See PEP 591 – Adding a final qualifier to typing
     VALID_TYPES: list = ['GuiComponent']
+    VALID_ENUMERATIONS: list = [0] # TODO
 
     def __init__(self, element: object = None, validate_type: bool = True) -> None:
         """Constructor."""
