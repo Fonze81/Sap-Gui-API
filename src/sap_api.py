@@ -627,7 +627,18 @@ class GuiEAIViewer3D(GuiShell):
     """GuiComponentType constant enumerations"""
     pass
 
-# TODO Create class based on the documentation of the 'GuiEnum'
+
+class GuiEnum():
+    """SAP Class 'GuiEnum'
+
+    GuiEnum is the base class for some enumerators used in SAP GUI Scripting.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiFrameWindow'
 # TODO Create class based on the documentation of the 'GuiGOSShell'
 # TODO Create class based on the documentation of the 'GuiGraphAdapt'
