@@ -111,7 +111,18 @@ class GuiButton(GuiVComponent):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiCalendar'
+class GuiCalendar(GuiShell):
+    """SAP Class 'GuiCalendar'
+
+    The calendar control can be used to select single dates or periods of
+    time.
+    GuiCalendar extends GuiShell.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
 # TODO Create class based on the documentation of the 'GuiChart'
 # TODO Create class based on the documentation of the 'GuiCheckBox'
 # TODO Create class based on the documentation of the 'GuiCollection'
