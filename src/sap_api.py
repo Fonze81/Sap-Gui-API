@@ -1073,7 +1073,20 @@ class GuiStatusPane():
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiTab'
+class GuiTab(GuiVContainer):
+    """SAP Class 'GuiTab'
+
+    The GuiTab objects are the children of a GuiTabStrip object.
+    The type prefix is tabp, the name is the id of the tab's button
+    taken from SAP data dictionary.
+    GuiTab extends GuiVContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [91]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiTableColumn'
 # TODO Create class based on the documentation of the 'GuiTableControl'
 # TODO Create class based on the documentation of the 'GuiTableRow'
