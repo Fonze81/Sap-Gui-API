@@ -1016,7 +1016,18 @@ class GuiSplitterContainer():
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiStage'
+class GuiStage():
+    """SAP Class 'GuiStage'
+
+    For the stage control only basic members from GuiShell are available.
+    Recording and playback is not possible.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiStatusbar'
 # TODO Create class based on the documentation of the 'GuiStatusPane'
 # TODO Create class based on the documentation of the 'GuiTab'
