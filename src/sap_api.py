@@ -670,7 +670,18 @@ class GuiGOSShell(GuiVContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiGraphAdapt'
+class GuiGraphAdapt():
+    """SAP Class 'GuiGraphAdapt'
+
+    For the graphic adapter control only basic members from GuiShell are
+    available. Recording and playback is not possible.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiGridView'
 # TODO Create class based on the documentation of the 'GuiHTMLViewer'
 # TODO Create class based on the documentation of the 'GuiInputFieldControl'
