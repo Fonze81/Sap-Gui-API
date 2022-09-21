@@ -1087,7 +1087,18 @@ class GuiTab(GuiVContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiTableColumn'
+class GuiTableColumn(GuiComponentCollection):
+    """SAP Class 'GuiTableColumn'
+
+    GuiTableColumn represents a column in a table control.
+    GuiTableColumn extends GuiComponentCollection.
+    """
+
+    VALID_ENUMERATIONS: list = [81]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiTableControl'
 # TODO Create class based on the documentation of the 'GuiTableRow'
 # TODO Create class based on the documentation of the 'GuiTabStrip'
