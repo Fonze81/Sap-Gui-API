@@ -997,12 +997,25 @@ class GuiSplit(GuiShell):
     GuiSplit extends GuiShell.
     """
 
-    VALID_ENUMERATIONS: list = ['?'] # TODO
+    VALID_ENUMERATIONS: list = ['?']  # TODO
     """GuiComponentType constant enumerations"""
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiSplitterContainer'
+class GuiSplitterContainer():
+    """SAP Class 'GuiSplitterContainer'
+
+    The GuiSplitterContainer represents the dynpro splitter element,
+    which was introduced in the Web Application Server ABAP in NetWeaver 7.1.
+    The dynpro splitter element is similar to the activeX based splitter
+    control, but it is a plain dynpro element.
+    """
+
+    VALID_ENUMERATIONS: list = [75]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiStage'
 # TODO Create class based on the documentation of the 'GuiStatusbar'
 # TODO Create class based on the documentation of the 'GuiStatusPane'
