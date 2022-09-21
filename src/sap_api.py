@@ -1113,7 +1113,18 @@ class GuiTableControl():
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiTableRow'
+class GuiTableRow(GuiComponentCollection):
+    """SAP Class 'GuiTableRow'
+
+    GuiTableRow represents a row in a table control.
+    GuiTableRow extends GuiComponentCollection.
+    """
+
+    VALID_ENUMERATIONS: list = [82]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiTabStrip'
 # TODO Create class based on the documentation of the 'GuiTextedit'
 # TODO Create class based on the documentation of the 'GuiTextField'
