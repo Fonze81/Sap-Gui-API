@@ -639,7 +639,23 @@ class GuiEnum():
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiFrameWindow'
+class GuiFrameWindow(GuiVContainer):
+    """SAP Class 'GuiFrameWindow'
+
+    A GuiFrameWindow is a high level visual object in the runtime hierarchy.
+    It can be either the main window or a modal popup window.
+    See the GuiMainWindow and GuiModalWindow sections for examples.
+    GuiFrameWindow itself is an abstract interface.
+    The type prefix is wnd, the name is wnd plus the window
+    number in square brackets.
+    GuiFrameWindow extends GuiVContainer.
+    """
+
+    VALID_ENUMERATIONS: list = [20]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiGOSShell'
 # TODO Create class based on the documentation of the 'GuiGraphAdapt'
 # TODO Create class based on the documentation of the 'GuiGridView'
