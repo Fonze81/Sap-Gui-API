@@ -733,7 +733,18 @@ class GuiLabel(GuiVComponent):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiMainWindow'
+class GuiMainWindow(GuiFrameWindow):
+    """SAP Class 'GuiMainWindow'
+
+    This window represents the main window of an SAP GUI session.
+    GuiMainWindow extends GuiFrameWindow.
+    """
+
+    VALID_ENUMERATIONS: list = [21]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiMap'
 # TODO Create class based on the documentation of the 'GuiMenu'
 # TODO Create class based on the documentation of the 'GuiMenubar'
