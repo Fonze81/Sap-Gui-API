@@ -23,7 +23,7 @@ fh.setFormatter(formatter)
 logger.addHandler(fh)
 
 
-class GuiAbapEditor():
+class GuiAbapEditor(GuiShell):
     """SAP Class 'GuiAbapEditor'
 
     The GuiAbapEditor object represents the new ABAP editor control available
@@ -36,7 +36,7 @@ class GuiAbapEditor():
     pass
 
 
-class GuiApoGrid():
+class GuiApoGrid(GuiShell):
     """SAP Class 'GuiApoGrid'
 
     The GuiApoGrid object is component, which is similar to GuiGridView,
@@ -50,7 +50,7 @@ class GuiApoGrid():
     pass
 
 
-class GuiApplication():
+class GuiApplication(GuiContainer):
     """SAP Class 'GuiApplication'
 
     The GuiApplication represents the process in which all SAP GUI activity
@@ -66,7 +66,20 @@ class GuiApplication():
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiBarChart'
+class GuiBarChart(GuiShell):
+    """SAP Class 'GuiBarChart'
+
+    The GuiBarChart is a powerful tool to display and modify time scale
+    diagrams. The object is of a very technical nature. It should only be used
+    for recording and playback, as most of the parameters cannot be determined
+    in any other way.
+    GuiBarChart extends GuiShell.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
 # TODO Create class based on the documentation of the 'GuiBox'
 # TODO Create class based on the documentation of the 'GuiButton'
 # TODO Create class based on the documentation of the 'GuiCalendar'
