@@ -785,7 +785,18 @@ class GuiMenubar(GuiVContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiMessageWindow'
+class GuiMessageWindow():
+    """SAP Class 'GuiMessageWindow'
+
+    GuiMessageWindow is a message box displayed by message showMessageBox of
+    GuiUtils.
+    """
+
+    VALID_ENUMERATIONS: list = [23]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiModalWindow'
 # TODO Create class based on the documentation of the 'GuiNetChart'
 # TODO Create class based on the documentation of the 'GuiOfficeIntegration'
