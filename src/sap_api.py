@@ -1453,4 +1453,15 @@ class GuiVContainer(GuiContainer, GuiVComponent):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiVHViewSwitch'
+class GuiVHViewSwitch():
+    """SAP Class 'GuiVHViewSwitch'
+
+    GuiVHViewSwitch represents the "View Switch" object that was introduced
+    with the Belize theme in SAP GUI. The View Switch is placed in the header
+    area of the SAP GUI main window and can be used to select different views
+    within an application.
+    """
+
+    VALID_ENUMERATIONS: list = [129]
+    """GuiComponentType constant enumerations"""
+    pass
