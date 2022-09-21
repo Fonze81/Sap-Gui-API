@@ -1252,7 +1252,16 @@ class GuiUtils():
 
 
 class GuiVComponent(GuiComponent):
+    """SAP Class 'GuiVComponent'
 
+    The GuiVComponent interface is exposed by all visual objects,
+    such as windows, buttons or text fields. Like GuiComponent,
+    it is an abstract interface. Any object supporting the GuiVComponent
+    interface also exposes the GuiComponent interface.
+    GuiVComponent extends GuiComponent.
+    """
+
+    VALID_ENUMERATIONS: list = [1] # TODO
     VALID_TYPES: list = ['GuiComponent', 'GuiVComponent']
 
     @final
