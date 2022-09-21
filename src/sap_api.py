@@ -1261,7 +1261,7 @@ class GuiVComponent(GuiComponent):
     GuiVComponent extends GuiComponent.
     """
 
-    VALID_ENUMERATIONS: list = [1] # TODO
+    VALID_ENUMERATIONS: list = [1]  # TODO
     VALID_TYPES: list = ['GuiComponent', 'GuiVComponent']
 
     @final
@@ -1437,5 +1437,20 @@ class GuiVComponent(GuiComponent):
     def visualize(self, on, inner_object=None):
         pass
 
-# TODO Create class based on the documentation of the 'GuiVContainer'
+
+class GuiVContainer(GuiContainer, GuiVComponent):
+    """SAP Class 'GuiVContainer'
+
+    An object exposes the GuiVContainer interface if it is both visible and
+    can have children. It will then also expose GuiComponent and
+    GuiVComponent. Examples of this interface are windows and subscreens,
+    toolbars or controls having children, such as the splitter control.
+    GuiVContainer extends GuiContainer and GuiVComponent.
+    """
+
+    VALID_ENUMERATIONS: list = [2]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiVHViewSwitch'
