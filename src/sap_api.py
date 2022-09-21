@@ -548,8 +548,24 @@ class GuiContainerShell():
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiContextMenu'
-# TODO Create class based on the documentation of the 'GuiCTextField'
+class GuiCTextField(GuiTextField):
+    """SAP Class 'GuiCTextField'
+
+    If the cursor is set into a text field of type GuiCTextField a combo box
+    button is displayed to the right of the text  field.
+    Pressing this button is equivalent to pressing the F4 key.
+    The button is not represented in the scripting object model as a separate
+    object; it is considered to be part of the text  field.
+    There are no other differences between GuiTextField and GuiCTextField.
+    The type prefix is ctxt, the name is the Fieldname taken from the SAP
+    data dictionary.
+    GuiCTextField extends GuiTextField.
+    """
+
+    VALID_ENUMERATIONS: list = [32]
+    """GuiComponentType constant enumerations"""
+    pass
+
 # TODO Create class based on the documentation of the 'GuiCustomControl'
 # TODO Create class based on the documentation of the 'GuiDialogShell'
 # TODO Create class based on the documentation of the 'GuiEAIViewer2D'
