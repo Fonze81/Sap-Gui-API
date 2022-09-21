@@ -123,7 +123,20 @@ class GuiCalendar(GuiShell):
     """GuiComponentType constant enumerations"""
     pass
 
-# TODO Create class based on the documentation of the 'GuiChart'
+
+class GuiChart():
+    """SAP Class 'GuiChart'
+
+    The GuiChart object is of a very technical nature. It should only be used
+    for recording and playback, as most of the parameters cannot be determined
+    in any other way.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiCheckBox'
 # TODO Create class based on the documentation of the 'GuiCollection'
 # TODO Create class based on the documentation of the 'GuiColorSelector'
