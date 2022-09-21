@@ -177,7 +177,25 @@ class GuiColorSelector(GuiShell):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiComboBox'
+class GuiComboBox(GuiVComponent):
+    """SAP Class 'GuiComboBox'
+
+    The GuiComboBox looks somewhat similar to GuiCTextField,
+    but has a completely different implementation.
+    While pressing the combo box button of a GuiCTextField will open a new
+    dynpro or control in which a selection can be made, GuiComboBox retrieves
+    all possible choices on initialization from the server, so the selection
+    is done solely on the client.
+    The type prefix is cmb, the name is the fieldname taken from the SAP
+    data dictionary.
+    GuiComboBox extends GuiVComponent.
+    """
+
+    VALID_ENUMERATIONS: list = [34]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiComboBoxControl'
 # TODO Create class based on the documentation of the 'GuiComboBoxEntry'
 
