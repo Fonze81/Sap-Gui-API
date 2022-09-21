@@ -797,7 +797,18 @@ class GuiMessageWindow():
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiModalWindow'
+class GuiModalWindow(GuiFrameWindow):
+    """SAP Class 'GuiModalWindow'
+
+    A GuiModalWindow is a dialog pop-up.
+    GuiModalWindow extends GuiFrameWindow.
+    """
+
+    VALID_ENUMERATIONS: list = [22]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiNetChart'
 # TODO Create class based on the documentation of the 'GuiOfficeIntegration'
 # TODO Create class based on the documentation of the 'GuiOkCodeField'
