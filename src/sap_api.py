@@ -1196,7 +1196,19 @@ class GuiToolbar(GuiVContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiToolbarControl'
+class GuiToolbarControl(GuiShell):
+    """SAP Class 'GuiToolbarControl'
+
+    GuiToolbarControl represents a button bar control that can host different
+    types of buttons.
+    GuiToolbarControl extends GuiShell.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiTree'
 # TODO Create class based on the documentation of the 'GuiUserArea'
 # TODO Create class based on the documentation of the 'GuiUtils'
