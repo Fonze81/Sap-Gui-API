@@ -535,7 +535,19 @@ class GuiContainer(GuiComponent):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiContainerShell'
+class GuiContainerShell():
+    """SAP Class 'GuiContainerShell'
+
+    A GuiContainerShell is a wrapper for a set of GuiShell objects.
+    GuiContainerShell extends GuiVContainer. The type prefix is shellcont,
+    the name is the last part of the id, shellcont[n].
+    """
+
+    VALID_ENUMERATIONS: list = [51]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiContextMenu'
 # TODO Create class based on the documentation of the 'GuiCTextField'
 # TODO Create class based on the documentation of the 'GuiCustomControl'
