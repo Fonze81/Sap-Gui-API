@@ -682,7 +682,19 @@ class GuiGraphAdapt():
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiGridView'
+class GuiGridView(GuiShell):
+    """SAP Class 'GuiGridView'
+
+    The grid view is similar to the dynpro table control,
+    but significantly more powerful.
+    GuiGridView extends GuiShell.
+    """
+
+    VALID_ENUMERATIONS: list = ['?']  # TODO
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiHTMLViewer'
 # TODO Create class based on the documentation of the 'GuiInputFieldControl'
 # TODO Create class based on the documentation of the 'GuiLabel'
