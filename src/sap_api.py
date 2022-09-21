@@ -837,7 +837,22 @@ class GuiOfficeIntegration(GuiShell):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiOkCodeField'
+class GuiOkCodeField(GuiVComponent):
+    """SAP Class 'GuiOkCodeField'
+
+    The GuiOkCodeField is placed on the upper toolbar of the main window.
+    It is a combo box into which commands can be entered. Setting the text of
+    GuiOkCodeField will not execute the command until server communication is
+    started, for example by emulating the Enter key (VKey 0).
+    The type prefix is okcd, the name is empty.
+    GuiOkCodeField extends GuiVComponent.
+    """
+
+    VALID_ENUMERATIONS: list = [35]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiPasswordField'
 # TODO Create class based on the documentation of the 'GuiPicture'
 # TODO Create class based on the documentation of the 'GuiRadioButton'
