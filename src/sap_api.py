@@ -950,7 +950,19 @@ class GuiSession(GuiContainer):
     pass
 
 
-# TODO Create class based on the documentation of the 'GuiSessionInfo'
+class GuiSessionInfo():
+    """SAP Class 'GuiSessionInfo'
+
+    GuiSessionInfo is a member of all GuiSession objects. It makes available
+    technical information about the session. Some of its properties are
+    displayed in the right corner of the SAP GUI status line.
+    """
+
+    VALID_ENUMERATIONS: list = [121]
+    """GuiComponentType constant enumerations"""
+    pass
+
+
 # TODO Create class based on the documentation of the 'GuiShell'
 # TODO Create class based on the documentation of the 'GuiSimpleContainer'
 # TODO Create class based on the documentation of the 'GuiSplit'
